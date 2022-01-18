@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/tools">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <variable
+                name="viewModel"
+                type="com.android.hireme.viewmodels.LoginViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@mipmap/layer_5"
+            >
+
+
+        <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guidelineTop"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.33" />
+
+
+        <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="160dp"
+                android:layout_height="160dp"
+                android:src="@mipmap/layer_6"
+                app:layout_constraintBottom_toTopOf="@+id/guidelineTop"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="60dp"
+                android:layout_marginEnd="45dp"
+                android:background="@drawable/edittext_background"
+                android:drawableStart="@drawable/et_email"
+                android:drawablePadding="12dp"
+                android:hint="Email Address"
+                android:inputType="textEmailAddress"
+                android:text="worker6@yopmail.com"
+                android:maxLines="1"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/guidelineTop" />
+
+        <androidx.appcompat.widget.AppCompatEditText
+                android:id="@+id/password"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/edit_text_height"
+                android:layout_marginStart="45dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="45dp"
+                android:background="@drawable/edittext_background"
+                android:drawableStart="@drawable/et_password"
+                android:drawablePadding="12dp"
+                android:hint="Password"
+                android:text="123456"
+                android:inputType="textPassword"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/black"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/email" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/opensans_semibold"
+                android:text="Forgot Password?"
+                android:textColor="@color/black"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/password"
+                app:layout_constraintTop_toBottomOf="@+id/password" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/loginButton"
+                android:layout_width="125dp"
+                android:layout_height="0dp"
+                android:src="@mipmap/login"
+                app:layout_constraintEnd_toEndOf="@+id/password"
+                app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/createAnAccount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                android:fontFamily="@font/opensans_bold"
+                android:text="Don't have an account? Create an Account"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
