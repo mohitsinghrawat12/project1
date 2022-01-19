@@ -71,10 +71,7 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
                 Status.SUCCESS -> {
                     dismissProgressBar()
                     it.data?.let { it1 ->
-                        Toast(context).showCustomToast(
-                            TOAST_SUCCESS_TYPE, it1.message,
-                            context as Activity
-                        )
+
 
                         val intent = Intent(context, HireMeActivity::class.java).apply {
                             putExtra("loginResponse", it1)

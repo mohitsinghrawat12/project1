@@ -10,7 +10,11 @@
             android:name="com.android.hireme.screens.home.HomeFragment"
             android:label="fragment_home"
             tools:layout="@layout/fragment_home" >
-        <argument android:name="loginResponse"
-                app:argType="com.android.hireme.model.LoginResponse"/>
+
+        <argument
+                android:name="loginResponse"
+                app:argType="com.android.hireme.model.LoginResponse"
+                app:nullable="true"
+                android:defaultValue="@null" />
     </fragment>
 </navigation>

@@ -15,6 +15,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import androidx.navigation.fragment.navArgs
 import com.android.hireme.R
 import com.android.hireme.base.BaseFragment
 import com.android.hireme.databinding.FragmentHomeBinding
@@ -32,6 +33,8 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
     lateinit var navController: NavController
     lateinit var mBinding: FragmentHomeBinding
     lateinit var homeViewModel : HomeViewModel
+
+    val args: HomeFragmentArgs by navArgs()
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -64,9 +67,26 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        navController = Navigation.findNavController(view)
-        val arg = navController.currentDestination?.arguments?.get("loginResposnse")
+//        navController = Navigation.findNavController(view)
+//        val arg = navController.currentDestination?.arguments?.get("loginResposnse")
+//        val info = args.loginResponse
+//        Log.d("mohit", "abc")
+
+        val bundle = arguments
+                if (bundle == null) {
+                    Log.e("Confirmation", "ConfirmationFragment did not receive traveler information")
+                    return
+                }
+
+        val args = HomeFragmentArgs.fromBundle(bundle)
         Log.d("mohit", "abc")
+        val loginResponse = args.loginResponse
+        loginResponse?.let {
+            Toast(context).showCustomToast(
+                TOAST_SUCCESS_TYPE, it.message,
+                context as Activity
+            )
+        }
     }
 
     override fun onClick(view: View?) {
