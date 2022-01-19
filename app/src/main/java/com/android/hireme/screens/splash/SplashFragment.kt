@@ -8,6 +8,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.android.hireme.R
 import com.android.hireme.base.BaseFragment
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -26,8 +30,14 @@ class SplashFragment : BaseFragment() {
         navController = Navigation.findNavController(view)
 
 
-        Timer().schedule(2000) {
+//        Timer().schedule(2000) {
+//            navController.navigate(R.id.action_splashFragment_to_welcomeFragment)
+//        }
+//
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(5000)
             navController.navigate(R.id.action_splashFragment_to_welcomeFragment)
+
         }
     }
 
