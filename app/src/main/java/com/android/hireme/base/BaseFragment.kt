@@ -3,6 +3,8 @@ package com.android.hireme.base
 import android.app.ProgressDialog
 import android.content.Context
 import android.os.Bundle
+import android.os.Message
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 open class BaseFragment : Fragment() {
 
@@ -30,6 +32,13 @@ open class BaseFragment : Fragment() {
         progressDialog.let {
             it.dismiss()
         }
+    }
+    fun showToast(message: String){
+        Toast.makeText(
+            context, message,
+            Toast.LENGTH_SHORT
+        ).show()
+
     }
 
 }
