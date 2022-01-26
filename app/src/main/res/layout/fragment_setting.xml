@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:id="@+id/linear_main"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_height="wrap_content"
+        android:background="@color/purple_700"
+        android:layout_width="match_parent" >
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/opensans_semibold"
+            android:textColor="@color/white"
+            android:text="@string/setting"
+            android:layout_height="wrap_content"/>
+    </androidx.appcompat.widget.Toolbar>
+</LinearLayout>

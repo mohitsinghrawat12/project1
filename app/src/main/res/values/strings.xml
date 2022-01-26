@@ -3,6 +3,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sign_up">Sign Up</string>
     <string name="create_account">Create an account to access\nall feature</string>
+    <string name="setting">Setting</string>
     <string name="success_toast">Sucess</string>
     <string name="error_toast">Error</string>
 

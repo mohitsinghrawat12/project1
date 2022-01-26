@@ -79,7 +79,6 @@ class HomeFragment : BaseFragment(), View.OnClickListener {
                 }
 
         val args = HomeFragmentArgs.fromBundle(bundle)
-        Log.d("mohit", "abc")
         val loginResponse = args.loginResponse
         loginResponse?.let {
             Toast(context).showCustomToast(

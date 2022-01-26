@@ -1,15 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <!-- binding object of ViewModel to the XML layout -->
+    <data>
+
+        <variable
+            name="viewModel"
+            type="com.android.hireme.viewmodels.SignUpViewModel" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/white"
-        tools:context=".screens.welcome.WelcomeFragment">
+        >
 
 
-    <ImageView
+        <ImageView
             android:id="@+id/imageView2"
             android:layout_width="140dp"
             android:layout_height="140dp"
@@ -19,7 +27,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-    <androidx.constraintlayout.widget.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelinetop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -29,14 +37,14 @@
 
 
 
-    <androidx.constraintlayout.widget.Guideline
+        <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guidelineSecondTop"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             app:layout_constraintGuide_percent="0.40" />
 
-    <ScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:fillViewport="true"
@@ -48,11 +56,11 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/guidelineSecondTop">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-            <androidx.appcompat.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/signUpText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -69,7 +77,7 @@
                     app:layout_constraintTop_toTopOf="parent" />
 
 
-            <androidx.appcompat.widget.AppCompatTextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:id="@+id/createAnAccount"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -82,7 +90,7 @@
                     app:layout_constraintStart_toStartOf="@+id/signUpText"
                     app:layout_constraintTop_toBottomOf="@+id/signUpText" />
 
-            <androidx.appcompat.widget.AppCompatAutoCompleteTextView
+                <androidx.appcompat.widget.AppCompatAutoCompleteTextView
                     android:id="@+id/selectRole"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/edit_text_height"
@@ -104,7 +112,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/createAnAccount" />
 
 
-            <androidx.appcompat.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/firstName"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/edit_text_height"
@@ -121,7 +129,7 @@
                     app:layout_constraintStart_toStartOf="@+id/selectRole"
                     app:layout_constraintTop_toBottomOf="@+id/selectRole" />
 
-            <androidx.appcompat.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/lastName"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/edit_text_height"
@@ -138,7 +146,7 @@
                     app:layout_constraintStart_toStartOf="@+id/firstName"
                     app:layout_constraintTop_toBottomOf="@+id/firstName" />
 
-            <androidx.appcompat.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/email"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/edit_text_height"
@@ -155,7 +163,7 @@
                     app:layout_constraintStart_toStartOf="@+id/lastName"
                     app:layout_constraintTop_toBottomOf="@+id/lastName" />
 
-            <androidx.appcompat.widget.AppCompatEditText
+                <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/password"
                     android:layout_width="0dp"
                     android:layout_height="@dimen/edit_text_height"
@@ -172,7 +180,7 @@
                     app:layout_constraintStart_toStartOf="@+id/email"
                     app:layout_constraintTop_toBottomOf="@+id/email" />
 
-            <androidx.appcompat.widget.AppCompatImageView
+                <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/signUpButton"
                     android:layout_width="125dp"
                     android:layout_height="0dp"
@@ -181,10 +189,10 @@
                     app:layout_constraintTop_toBottomOf="@+id/password" />
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
 
-    <ImageView
+        <ImageView
             android:id="@+id/imageView"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -197,4 +205,5 @@
             app:layout_constraintTop_toTopOf="@+id/guidelinetop"
             app:layout_constraintVertical_bias="0.0" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
