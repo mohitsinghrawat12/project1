@@ -65,6 +65,7 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
         navController = Navigation.findNavController(view)
 
         mBinding.loginButton.setOnClickListener(this)
+        mBinding.createAnAccount.setOnClickListener(this)
 
         loginViewModel.getLoginResponse().observe(viewLifecycleOwner, Observer {
             when (it.status) {
@@ -99,6 +100,9 @@ class LoginFragment : BaseFragment(), View.OnClickListener {
         when (view?.id) {
             R.id.loginButton -> {
                 loginViewModel.getLogin(mBinding.email.text.toString(), mBinding.password.text.toString())
+            }
+            R.id.createAnAccount -> {
+                navController.navigate(R.id.action_loginFragment_to_signupFragment)
             }
         }
     }

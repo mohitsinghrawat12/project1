@@ -110,10 +110,7 @@ class SignupFragment : BaseFragment(){
                             context as Activity
                         )
 
-                        val intent = Intent(context, HireMeActivity::class.java).apply {
-                            putExtra("loginResponse", it1)
-                        }
-                        startActivity(intent)
+                        navController.popBackStack()
                     }
                 }
                 Status.LOADING -> {
